@@ -324,7 +324,7 @@ def dsan_s(pretrained=False, **kwargs):
         embed_dims=[64, 128, 320, 512], mlp_ratios=[8, 8, 4, 4],
         kernel_sizes=[15,13,7,5],
         dw_kernel_sizes=[9, 7, 5, 5],
-        pads=[7,6,4,2],
+        pads=[7,6,3,2],
         groups=[4,8,16,16],
         norm_layer=partial(nn.LayerNorm, eps=1e-6), 
         depths=[2, 2, 5, 3],
