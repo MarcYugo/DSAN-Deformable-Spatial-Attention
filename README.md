@@ -7,7 +7,7 @@ This is the implementation of DSAN in PyTorch. DSAN is a lightweight CNN image e
     CUDA>=11.6
     torch==1.13.0
     timm==0.4.12
-    mmcv==1.6.0
+    mmcv-full==1.6.0
     mmsegmentation==0.26.0
     mmdet==2.28.2
     yapf==0.40.0
