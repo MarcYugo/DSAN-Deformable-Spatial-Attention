@@ -24,6 +24,7 @@ Install DSCN before your experiments.
 |Dataset|Model|Params(M)|FLOPs(G)|Top-1 Acc(%)|Download|
 |-|-|-|-|-|-|
 |IN-1K|DSAN-T|4.6|1.0|76.4|[ckpt](https://drive.google.com/file/d/13kzhzEBMaFJQ9bqSOyKx-uN0ufN45dkY/view?usp=sharing)|
+||DSAN-T2|6.0|1.3|77.6|[ckpt](https://drive.google.com/file/d/1aiGgXTmHiorGoBXVQtuACGJhhYeVxrWl/view?usp=sharing)|
 ||DSAN-S|19.9|3.2|82.3|[ckpt](https://drive.google.com/file/d/1sBjIoUhwWZwmk8vnhkM8idu_faLRpliC/view?usp=sharing)|
 
 ### Semantic segmentation
