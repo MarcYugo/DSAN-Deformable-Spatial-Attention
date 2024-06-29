@@ -317,6 +317,20 @@ def dsan_t(pretrained=False, **kwargs):
         model = load_model_weights(model, "dsan_t", kwargs)
     return model
 
+@register_model
+def dsan_t2(pretrained=False, **kwargs):
+    model = DSAN(
+        embed_dims=[32, 64, 160, 256], mlp_ratios=[8, 8, 4, 4],
+        dw_kernel_sizes=[19, 15, 13, 7],
+        kernel_sizes=[19, 15, 13, 7],
+        groups=[4,8,16,16],
+        pads=[9, 7, 6, 3],
+        norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[3, 3, 8, 2],
+        **kwargs)
+    model.default_cfg = _cfg()
+    if pretrained:
+        model = load_model_weights(model, "dsan_t", kwargs)
+    return model
 
 @register_model
 def dsan_s(pretrained=False, **kwargs):
