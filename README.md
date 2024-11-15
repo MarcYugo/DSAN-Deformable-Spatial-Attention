@@ -18,6 +18,10 @@ Install SDC before your experiments.
 
     cd classification/models/ops_dscn && python setup.py install
 
+### Training
+
+There are three vision tasks: classification, detection & instance segmentation, and semantic segmentation, corresponding to three folders listed from up to down. Each folder contains files and scripts used for training models. For detailed information about these scripts, please refer to the respective folders.
+
 ## Applications
 ### Image Classification
 
