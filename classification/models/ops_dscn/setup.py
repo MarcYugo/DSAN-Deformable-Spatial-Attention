@@ -59,7 +59,7 @@ def get_extensions():
 
 
 setup(
-    name="DSCN",
+    name="SDC",
     version="0.1",
     author="Zewen Yu, based on InternImage ops_dcnv3",
     url=None,
