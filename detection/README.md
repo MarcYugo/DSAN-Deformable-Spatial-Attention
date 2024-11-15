@@ -1,12 +1,17 @@
 ### Trainig
-Please use the script "train.sh" to start model training. The sample is configured for a node with 8 GPUs, numbered 0,1,2,3,4,5,6,7. 
+Please use the script "dist_train.sh" to start model training. The sample is configured for a node with 8 GPUs for training the combination of mask-rcnn and dsan-t on COCO dataset. 
 ```bash
-    MODEL=dsan_t #dsan_t, dsan_s
-    DROP_PATH=0.1
-    CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 bash distributed_train.sh 8 /path/to/imagenet \
-    	  --model $MODEL -b 64 --lr 1e-3 --drop-path $DROP_PATH --workers=16
+    #!/usr/bin/env bash
+    
+    CONFIG=configs/coco/mask_rcnn_dsan_t_fpn_1x.py
+    GPUS=8
+    PORT=${PORT:-29500}
+    
+    PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
+    torchrun --nproc_per_node=$GPUS --master_port=63667 \
+        $(dirname "$0")/train.py $CONFIG --launcher pytorch ${@:3}
 ```
 
 ### Eval
 
-If you want to evaluate our models, please use the script "eval.sh". If you don't know how to do it, please check the user manual or documents of [mmcv-documents](https://mmcv.readthedocs.io/en/v1.6.0/).
+If you want to evaluate our models, please use the script "dist_test.sh". If you don't know how to do it, please check the user manual or documents of [mmcv-documents](https://mmcv.readthedocs.io/en/v1.6.0/).
