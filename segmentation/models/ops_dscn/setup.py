@@ -59,9 +59,9 @@ def get_extensions():
 
 
 setup(
-    name="DSCN",
+    name="SDC",
     version="0.1",
-    author="xxx, based on InternImage ops_dcnv3",
+    author="Zewen Yu, based on InternImage ops_dcnv3",
     url=None,
     description=
     "PyTorch Wrapper for CUDA Functions of Deformable Strip Convolution (DSCN)",
