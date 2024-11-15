@@ -1,7 +1,7 @@
 # DSA: Deformable Spatial Attention
 <!--\[[Chinese version](https://gitcode.com/weixin_43385826/DSAN_Deformable_Spatial_Attention) \]  | [paper(preprint)]() -->
 ## Introduction
-This is the implementation of DSA in PyTorch. DSA is a plug-and-play attention module, which combines deformable convolution and spatial attention. To improve the speed of deformable convolution with large kernel, we simplify the core operation of [DCNv3](https://github.com/OpenGVLab/InternImage/tree/master/classification/ops_dcnv3) by dropping modulation mask and changing bilinear interpolation on spatial domain into linear interpolation along the x or y axes, and name the simplified version Strip-shaped Deformable Convolution (SDC).
+This is the implementation of DSA in PyTorch. DSA is a plug-and-play attention module, which combines deformable convolution and spatial attention. To improve the speed of deformable convolution with large kernel, we simplify the core operation of [DCNv3](https://github.com/OpenGVLab/InternImage/tree/master/classification/ops_dcnv3) by dropping modulation mask and changing bilinear interpolation on spatial domain into linear interpolation along the x or y axes.
 
 ## Requirements
     CUDA>=11.6
