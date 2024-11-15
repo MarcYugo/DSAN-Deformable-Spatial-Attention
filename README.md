@@ -1,7 +1,7 @@
-# DSAN: Deformable Spatial Attention Network
+# DSA: Deformable Spatial Attention
 <!--\[[Chinese version](https://gitcode.com/weixin_43385826/DSAN_Deformable_Spatial_Attention) \]  | [paper(preprint)]() -->
 ## Introduction
-This is the implementation of DSAN in PyTorch. DSAN is a lightweight CNN image encoder or backbone, which combines deformable convolution and spatial attention. To improve the speed of deformable convolution with large kernel, we simplify the core operation of [DCNv3](https://github.com/OpenGVLab/InternImage/tree/master/classification/ops_dcnv3) by dropping modulation mask and changing bilinear interpolation on spatial domain into linear interpolation along the x or y axes, and name the simplified version Deformable Strip Convolution (DSCN).
+This is the implementation of DSA in PyTorch. DSA is a plug-and-play attention module, which combines deformable convolution and spatial attention. To improve the speed of deformable convolution with large kernel, we simplify the core operation of [DCNv3](https://github.com/OpenGVLab/InternImage/tree/master/classification/ops_dcnv3) by dropping modulation mask and changing bilinear interpolation on spatial domain into linear interpolation along the x or y axes, and name the simplified version Strip-shaped Deformable Convolution (SDC).
 
 ## Requirements
     CUDA>=11.6
@@ -14,7 +14,7 @@ This is the implementation of DSAN in PyTorch. DSAN is a lightweight CNN image e
     torchprofile==0.0.4
 
 ### DSCN
-Install DSCN before your experiments.
+Install SDC before your experiments.
 
     cd classification/models/ops_dscn && python setup.py install
 
