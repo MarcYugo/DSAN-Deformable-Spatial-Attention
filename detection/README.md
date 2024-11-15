@@ -14,4 +14,4 @@ Please use the script "dist_train.sh" to start model training. The sample is con
 
 ### Eval
 
-If you want to evaluate our models, please use the script "dist_test.sh". If you don't know how to do it, please check the user manual or documents of [mmdet-documents]([https://mmcv.readthedocs.io/en/v1.6.0/](https://mmdetection.readthedocs.io/en/v2.28.2/)).
+If you want to evaluate our models, please use the script "dist_test.sh". If you don't know how to do it, please check the user manual or documents of [mmdet-documents](https://mmdetection.readthedocs.io/en/v2.28.2/).
