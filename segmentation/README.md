@@ -1,17 +1,25 @@
 ### Trainig
-Please use the script "dist_train.sh" to start model training. The sample is configured for a node with 8 GPUs for training the combination of mask-rcnn and dsan-t on COCO dataset. 
+Please use the script "dist_train.sh" to start model training. The sample is configured for a node with 8 GPUs for training the combination of hamburger and dsan-t on ADE20K dataset. 
 ```bash
-    #!/usr/bin/env bash
-    
-    CONFIG=configs/coco/mask_rcnn_dsan_t_fpn_1x.py
-    GPUS=8
-    PORT=${PORT:-29500}
-    
-    PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-    torchrun --nproc_per_node=$GPUS --master_port=63667 \
-        $(dirname "$0")/train.py $CONFIG --launcher pytorch ${@:3}
+CONFIG=configs/ham/ham_dsan_t_ade20k_160k.py
+GPUS=8
+NNODES=${NNODES:-1}
+NODE_RANK=${NODE_RANK:-0}
+PORT=${PORT:-29500}
+MASTER_ADDR=${MASTER_ADDR:-"127.0.0.1"}
+
+PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
+torchrun \
+    --nnodes=$NNODES \
+    --node_rank=$NODE_RANK \
+    --master_addr=$MASTER_ADDR \
+    --nproc_per_node=$GPUS \
+    --master_port=$PORT \
+    $(dirname "$0")/train.py \
+    $CONFIG \
+    --launcher pytorch ${@:3} \
 ```
 
 ### Eval
 
-If you want to evaluate our models, please use the script "dist_test.sh". If you don't know how to do it, please check the user manual or documents of [mmdet-documents](https://mmdetection.readthedocs.io/en/v2.28.2/).
+If you want to evaluate our models, please use the script "dist_test.sh". If you don't know how to do it, please check the user manual or documents of [mmsegmentation-documents](https://mmsegmentation.readthedocs.io/en/latest/).
