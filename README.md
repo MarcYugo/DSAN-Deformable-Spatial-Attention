@@ -23,6 +23,7 @@ Install SDC before your experiments.
 There are three vision tasks: classification, detection & instance segmentation, and semantic segmentation, corresponding to three folders listed from up to down. Each folder contains files and scripts used for training models. For detailed information about these scripts, please refer to the respective folders.
 
 ## Applications
+You can downlad checkponints from following links.
 ### Image Classification
 
 |Dataset|Model|Params(M)|FLOPs(G)|Top-1 Acc(%)|Download|
