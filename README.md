@@ -14,7 +14,7 @@ This is the implementation of DSA in PyTorch. DSA is a plug-and-play attention m
     torchprofile==0.0.4
 
 ### DSCN
-Install SDC before your experiments.
+Install SDC before your experiments. Since we had not yet decided on a name for the operator during programming, we temporarily referred to the simplified strip convolution as DSCN, which is equivalent to SDC mentioned in the paper.
 
     cd classification/models/ops_dscn && python setup.py install
 
